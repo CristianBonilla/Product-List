@@ -5,18 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './views/components/navbar/navbar.component';
 import { SidebarComponent } from './views/components/sidebar/sidebar.component';
-import { ListComponent } from './modules/product-list/components/list/list.component';
+import { ProductsModule } from './modules/products/products.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SidebarComponent,
-    ListComponent
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
