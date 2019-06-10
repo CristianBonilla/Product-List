@@ -5,16 +5,23 @@
 @import 'mixins/sidebar';
 @import 'mixins/buttons';
 @import 'mixins/dropdown';
+@import 'mixins/cards';
+
+@import 'misc';
 
 @import 'themes/typography';
-@import 'misc';
 @import 'themes/nucleo-outline';
+@import 'themes/source-sans-pro';
 
 @import 'base/bg';
+@import 'base/perfect-scrollbar';
 
 @import 'modules/buttons';
 @import 'modules/inputs';
 @import 'modules/dropdown';
+
+@import 'modules/cards';
+@import 'modules/pagination';
 
 @import 'layout/wrapper';
 @import 'layout/sidebar';

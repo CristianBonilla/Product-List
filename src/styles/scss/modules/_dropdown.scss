@@ -88,10 +88,10 @@
 
   .dropdown-item,
   .bootstrap-select &.inner li a {
-    font-size: $font-size-small;
+    font-size: $font-size-base;
     padding-top: .6rem;
     padding-bottom: .6rem;
-    margin-top: 5px;
+    // margin-top: 5px;
     @include transition($fast-transition-time, $transition-linear);
 
     &:hover,
@@ -201,5 +201,11 @@
     &:after {
       display: none;
     }
+  }
+}
+
+.dropdown-toggle.caret-none {
+  &:after {
+    display: none;
   }
 }

@@ -15,8 +15,14 @@
       "node_modules/@types"
     ],
     "paths": {
-      "/views/*": [
-        "./src/app/views/*"
+      "@env/*": [
+        "./src/environments/*"
+      ],
+      "@core/*": [
+        "./src/app/core/*"
+      ],
+      "@modules/*": [
+        "./src/app/modules/*"
       ]
     },
     "lib": [

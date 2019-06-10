@@ -45,7 +45,7 @@
         }
 
         .sidebar-mini-icon {
-          text-transform: uppercase;
+          // text-transform: uppercase;
           width: 34px;
           margin-right: 10px;
           margin-left: 0px;
@@ -60,9 +60,11 @@
           color: $opacity-5;
         }
 
-        i {
+        i, fa-icon {
           font-size: 17px;
           line-height: 20px;
+        }
+        i {
           width: 26px;
         }
       }
@@ -126,14 +128,16 @@
 
       >a {
         margin: 10px 15px 0;
-        border-radius: $btn-round-radius;
+        // border-radius: $btn-round-radius;
+        border-radius: 0;
         color: $white-color;
         display: block;
         text-decoration: none;
         position: relative;
-        text-transform: uppercase;
+        // text-transform: uppercase;
         cursor: pointer;
-        font-size: $font-size-mini;
+        // font-size: $font-size-large;
+        font-size: 1.012em;
         padding: 10px 8px;
         line-height: $line-height-nav-link;
       }
@@ -148,7 +152,9 @@
       }
 
       &:hover:not(.active)>a i,
-      &:focus:not(.active)>a i {
+      &:hover:not(.active)>a fa-icon,
+      &:focus:not(.active)>a i,
+      &:focus:not(.active)>a fa-icon {
         color: $white-color;
       }
 
@@ -162,7 +168,7 @@
         box-shadow: none;
         color: $white-color;
 
-        i {
+        i, fa-icon {
           color: $white-color;
         }
 
@@ -170,11 +176,17 @@
           background-color: transparent;
           box-shadow: none;
 
+          .sidebar-mini-icon > fa-icon {
+            color: $primary-color;
+            line-height: 1.4;
+          }
+
           &:after {
             content: "";
             position: absolute;
             background-color: $white-color;
-            border-radius: 30px;
+            // border-radius: 30px;
+            border-radius: 0;
             box-shadow: $box-shadow;
             color: $primary-color;
             height: 44px;
@@ -197,7 +209,7 @@
       @extend .animation-transition-general;
     }
 
-    i {
+    i, fa-icon {
       font-size: 20px;
       float: left;
       margin-right: 12px;
@@ -262,7 +274,7 @@
       position: absolute;
       bottom: 0;
       right: 15px;
-      height: 1px;
+      height: 2px;
       width: calc(100% - 30px);
       background-color: $opacity-5;
 
@@ -278,7 +290,7 @@
     }
 
     .simple-text {
-      text-transform: uppercase;
+      // text-transform: uppercase;
       padding: $padding-base-vertical 0;
       display: block;
       white-space: nowrap;
@@ -288,6 +300,11 @@
       font-weight: $font-weight-normal;
       line-height: 30px;
       overflow: hidden;
+
+      &.logo-normal {
+        font-family: 'source_sans_prosemibold';
+        font-size: 20px;
+      }
     }
   }
 
@@ -353,7 +370,7 @@
       position: absolute;
       bottom: 0;
       right: 15px;
-      height: 1px;
+      height: 2px;
       width: calc(100% - 30px);
       background-color: $opacity-5;
     }
@@ -389,10 +406,12 @@
         line-height: 18px;
 
         >span {
+          font-family: 'source_sans_prosemibold';
           @extend .animation-transition-general;
           display: block;
           position: relative;
           opacity: 1;
+          font-size: 15px;
         }
       }
 
@@ -427,7 +446,7 @@
   }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
 
   .sidebar,
   .main-panel,

@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 offset-md-6">
+    <div class="card">
+      <div class="card-body p-2">
+        <ul class="pagination d-flex justify-content-center align-content-center mb-0">
+          <li class="page-item">
+            <a class="page-link" href="#link" aria-label="Previous" (click)="onPrev(); $event.preventDefault()">
+              <span aria-hidden="true">
+                <fa-icon [icon]="[ 'fas', 'angle-double-left' ]" aria-hidden="true"></fa-icon>
+              </span>
+            </a>
+          </li>
+          <li class="page-item" [class.active]="page === currentPage" *ngFor="let currentPage of getPages">
+            <a class="page-link" href="#link" (click)="onPage(currentPage); $event.preventDefault()">{{ currentPage }}</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#link" aria-label="Next" (click)="onNext(); $event.preventDefault()">
+              <span aria-hidden="true">
+                <fa-icon [icon]="[ 'fas', 'angle-double-right' ]" aria-hidden="true"></fa-icon>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

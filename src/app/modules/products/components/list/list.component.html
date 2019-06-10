@@ -1,0 +1,8 @@
+<ng-container *ngIf="products$ | async as products">
+  <pl-pagination [productsTotal]="products.length" (paginate)="paginate($event)"></pl-pagination>
+  <div class="row" *ngFor="let group of products | productGrouping: pagination">
+    <div class="col-sm-3" *ngFor="let product of group">
+      <pl-item [item]="productItemInstance(product)"></pl-item>
+    </div>
+  </div>
+</ng-container>

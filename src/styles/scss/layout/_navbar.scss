@@ -31,7 +31,9 @@
     }
 
     .input-group-prepend .input-group-text i,
-    .input-group-append .input-group-text i {
+    .input-group-append .input-group-text i,
+    .input-group-prepend .input-group-text fa-icon,
+    .input-group-append .input-group-text fa-icon {
       color: $default-color;
       opacity: .5;
     }
@@ -48,7 +50,9 @@
     .input-group-append .input-group-text {
       color: $white-color;
 
-      i {
+      i,
+      fa-icon {
+        line-height: 1;
         opacity: 1;
       }
     }
@@ -70,7 +74,7 @@
     display: inline-block;
     margin: 0;
     line-height: 1.8em;
-    font-size: 1em;
+    font-size: 1.4em;
     font-weight: 400;
   }
 
@@ -136,29 +140,29 @@
     }
 
     .nav-link {
-      text-transform: uppercase;
+      // text-transform: uppercase;
       font-size: $font-size-mini;
       padding: $padding-base-vertical $padding-base-horizontal;
-      line-height: $line-height-nav-link;
+      // line-height: $line-height-nav-link;
+      line-height: 1;
       margin-right: 3px;
+      cursor: pointer;
 
       i.fa+p,
-      i.now-ui-icons+p {
+      fa-icon + p {
         margin-left: 3px;
       }
 
-      i.fa,
-      i.now-ui-icons {
+      fa-icon > svg {
+        width: 25px;
+      }
+
+      i.fa {
         font-size: 18px;
         position: relative;
         top: 3px;
         text-align: center;
         width: 21px;
-      }
-
-      i.now-ui-icons {
-        top: 4px;
-        font-size: 16px;
       }
 
       &.profile-photo {
@@ -194,7 +198,7 @@
   }
 
   .navbar-brand {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-size: $font-size-small;
     padding-top: $padding-base-vertical;
     padding-bottom: $padding-base-vertical;
