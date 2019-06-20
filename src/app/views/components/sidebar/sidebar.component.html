@@ -1,89 +1,17 @@
 <div class="sidebar" data-color="red">
-  <pl-logo></pl-logo>
-  <div class="sidebar-wrapper" #sidebarWrapper>
-    <div class="user">
-      <div class="photo">
-        <img src="https://randomuser.me/api/portraits/men/46.jpg" />
-      </div>
-      <div class="info">
-        <a data-toggle="collapse" href="#collapseExample" class="collapsed">
-          <span>
-            Richard Wesker
-            <b class="caret"></b>
-          </span>
-        </a>
-        <div class="clearfix"></div>
-        <div class="collapse" id="collapseExample">
-          <ul class="nav">
-            <li>
-              <a [routerLink]="[ '/' ]">
-                <span class="sidebar-mini-icon">
-                  <fa-icon [icon]="[ 'far', 'user' ]"></fa-icon>
-                </span>
-                <span class="sidebar-normal">Mi perfil</span>
-              </a>
-            </li>
-            <li>
-              <a [routerLink]="[ '/' ]">
-                <span class="sidebar-mini-icon">
-                  <fa-icon [icon]="[ 'fas', 'user-secret' ]"></fa-icon>
-                </span>
-                <span class="sidebar-normal">Política de privacidad</span>
-              </a>
-            </li>
-            <li>
-              <a [routerLink]="[ '/' ]">
-                <span class="sidebar-mini-icon">
-                  <fa-icon [icon]="[ 'fas', 'user-cog' ]"></fa-icon>
-                </span>
-                <span class="sidebar-normal">Configuración</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+  <div class="logo">
+    <a class="simple-text logo-mini" href="/" [routerLink]="[ '/' ]">
+      <fa-icon [icon]="[ 'fas', 'box-open' ]" size="2x"></fa-icon>
+    </a>
+    <a class="simple-text logo-normal" href="/" [routerLink]="[ '/' ]">
+      Productos
+    </a>
+    <div class="navbar-minimize">
+      <button id="minimizeSidebar" class="btn btn-simple btn-icon btn-neutral btn-round">
+        <fa-icon class="visible-on-sidebar-regular" [icon]="[ 'fas', 'align-right' ]" size="lg"></fa-icon>
+        <fa-icon class="visible-on-sidebar-mini" [icon]="[ 'fas', 'align-justify' ]" size="lg"></fa-icon>
+      </button>
     </div>
-    <ul class="nav">
-      <li class="active">
-        <a data-toggle="collapse" href="#productList">
-          <fa-icon [icon]="[ 'fas', 'clipboard-list' ]" size="lg"></fa-icon>
-          <p>Menú<b class="caret"></b></p>
-        </a>
-        <div class="collapse" id="productList">
-          <ul class="nav">
-            <li class="active">
-              <a [routerLink]="[ '/' ]">
-                <span class="sidebar-mini-icon">
-                  <fa-icon [icon]="[ 'fas', 'store' ]"></fa-icon>
-                </span>
-                <span class="sidebar-normal">Tienda</span>
-              </a>
-            </li>
-            <li>
-              <a [routerLink]="[ '/' ]">
-                <span class="sidebar-mini-icon">
-                  <fa-icon [icon]="[ 'far', 'star' ]"></fa-icon>
-                </span>
-                <span class="sidebar-normal">Marcas populares</span>
-              </a>
-            </li>
-            <li>
-              <a [routerLink]="[ '/' ]">
-                <span class="sidebar-mini-icon">
-                  <fa-icon [icon]="[ 'fas', 'map-marked-alt' ]"></fa-icon>
-                </span>
-                <span class="sidebar-normal">Localizador de tiendas</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <a [routerLink]="[ '/' ]">
-          <fa-icon [icon]="[ 'fas', 'blog' ]"></fa-icon>
-          <p>Blog</p>
-        </a>
-      </li>
-    </ul>
   </div>
+  <pl-sidebar-wrapper></pl-sidebar-wrapper>
 </div>

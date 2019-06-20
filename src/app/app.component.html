@@ -1,10 +1,11 @@
 <div class="wrapper">
   <pl-sidebar></pl-sidebar>
-  <div class="main-panel" #mainPanel>
+  <div class="main-panel" plScrollbar>
     <pl-navbar></pl-navbar>
-    <div class="panel-header panel-header-sm"></div>
+    <div class="panel-header panel-header-lg">
+    </div>
     <div class="content">
-      <pl-menu></pl-menu>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

@@ -1,24 +1,21 @@
 export {
+  faBoxOpen,
+  faAlignJustify,
+  faAlignRight,
   faClipboardList,
+  faShoppingCart,
+  faCaretDown,
+  faSearch,
+  faHome,
   faUserSecret,
   faUserCog,
-  faAlignCenter,
-  faAlignJustify,
-  faBoxOpen,
-  faStore,
+  faShoppingBasket,
   faMapMarkedAlt,
-  faBlog,
-  faCartPlus,
-  faSearch,
-  faEllipsisH,
-  faHome,
-  faPhoneAlt,
-  faHandHoldingHeart
+  faBlog
 } from '@fortawesome/free-solid-svg-icons';
 
 export {
+  faBell,
   faUser,
-  faStar,
-  faHeart,
-  faQuestionCircle
+  faStar
 } from '@fortawesome/free-regular-svg-icons';

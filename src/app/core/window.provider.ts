@@ -7,7 +7,7 @@ export const WINDOW = new InjectionToken('WindowToken');
 // Define abstract class for obtaining reference to the global window object.
 export abstract class WindowRef {
   get nativeWindow(): Window | object {
-    throw new Error('Window not implemented.');
+    throw new Error('Not implemented.');
   }
 }
 
@@ -27,7 +27,6 @@ export function windowFactory(browserWindowRef: BrowserWindowRef, platformId: ob
   if (isPlatformBrowser(platformId)) {
     return browserWindowRef.nativeWindow;
   }
-
   return new Object();
 }
 

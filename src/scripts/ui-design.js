@@ -1,3 +1,20 @@
+/*!
+
+ =========================================================
+ * Now UI Dashboard PRO - v1.1.2
+ =========================================================
+
+ * Product Page: https://www.creative-tim.com/product/now-ui-dashboard-pro
+ * Copyright 2018 Creative Tim (http://www.creative-tim.com)
+
+ * Designed by www.invisionapp.com Coded by www.creative-tim.com
+
+ =========================================================
+
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ */
+
 transparent = true;
 transparentDemo = true;
 fixedTop = false;
@@ -19,11 +36,11 @@ seq2 = 0, delays2 = 80, durations2 = 500;
 
 function debounce(func, wait, immediate) {
   var timeout;
-  return function() {
+  return function () {
     var context = this,
       args = arguments;
     clearTimeout(timeout);
-    timeout = setTimeout(function() {
+    timeout = setTimeout(function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     }, wait);
@@ -31,7 +48,7 @@ function debounce(func, wait, immediate) {
   };
 };
 
-(function() {
+(function () {
   isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
   if (isWindows) {
@@ -44,7 +61,7 @@ function debounce(func, wait, immediate) {
   }
 })();
 
-$(document).ready(function() {
+$(document).ready(function () {
   $navbar = $('.navbar[color-on-scroll]');
   scroll_distance = $navbar.attr('color-on-scroll') || 500;
 
@@ -52,7 +69,7 @@ $(document).ready(function() {
   $('[data-toggle="tooltip"], [rel="tooltip"]').tooltip();
 
   // Activate Popovers and set color for popovers
-  $('[data-toggle="popover"]').each(function() {
+  $('[data-toggle="popover"]').each(function () {
     color_class = $(this).data('color');
     $(this).popover({
       template: '<div class="popover popover-' + color_class + '" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
@@ -81,18 +98,18 @@ $(document).ready(function() {
 
   var isWindows = navigator.platform.startsWith('Win');
   if (isWindows) {
-    $('.modal').on('shown.bs.modal', function() {
+    $('.modal').on('shown.bs.modal', function () {
       // $('.main-panel').perfectScrollbar('destroy');
-    }).on('hidden.bs.modal', function() {
+    }).on('hidden.bs.modal', function () {
       // $('.main-panel').perfectScrollbar();
     });
   }
 
   if ($('.full-screen-map').length == 0 && $('.bd-docs').length == 0) {
     // On click navbar-collapse the menu will be white not transparent
-    $('.collapse').on('show.bs.collapse', function() {
+    $('.collapse').on('show.bs.collapse', function () {
       $(this).closest('.navbar').removeClass('navbar-transparent').addClass('bg-white');
-    }).on('hide.bs.collapse', function() {
+    }).on('hide.bs.collapse', function () {
       if ($(document).scrollTop() <= scroll_distance) {
         $(this).closest('.navbar').addClass('navbar-transparent').removeClass('bg-white');
       }
@@ -101,21 +118,21 @@ $(document).ready(function() {
 
 
   // FileInput
-  $('.form-file-simple .inputFileVisible').click(function() {
+  $('.form-file-simple .inputFileVisible').click(function () {
     $(this).siblings('.inputFileHidden').trigger('click');
   });
 
-  $('.form-file-simple .inputFileHidden').change(function() {
+  $('.form-file-simple .inputFileHidden').change(function () {
     var filename = $(this).val().replace(/C:\\fakepath\\/i, '');
     $(this).siblings('.inputFileVisible').val(filename);
   });
   $('.form-file-simple .inputFileHidden, .form-file-multiple .inputFileHidden').css('z-index', '-1');
 
-  $('.form-file-multiple .inputFileVisible, .form-file-multiple .input-group-btn').click(function() {
+  $('.form-file-multiple .inputFileVisible, .form-file-multiple .input-group-btn').click(function () {
     $(this).siblings('.inputFileHidden').trigger('click');
   });
 
-  $('.form-file-multiple .inputFileHidden').change(function() {
+  $('.form-file-multiple .inputFileHidden').change(function () {
     var names = '';
     for (var i = 0; i < $(this).get(0).files.length; ++i) {
       if (i < $(this).get(0).files.length - 1) {
@@ -137,14 +154,14 @@ $(document).ready(function() {
     $(window).on('scroll', nowuiDashboard.checkScrollForTransparentNavbar)
   }
 
-  $('.form-control').on("focus", function() {
+  $('.form-control').on("focus", function () {
     $(this).parent('.input-group').addClass("input-group-focus");
-  }).on("blur", function() {
+  }).on("blur", function () {
     $(this).parent(".input-group").removeClass("input-group-focus");
   });
 
   // Activate bootstrapSwitch
-  $('.bootstrap-switch').each(function() {
+  $('.bootstrap-switch').each(function () {
     $this = $(this);
     data_on_label = $this.data('on-label') || '';
     data_off_label = $this.data('off-label') || '';
@@ -160,27 +177,27 @@ $(document).ready(function() {
   }
 });
 
-$(document).on('click', '.navbar-toggle', function() {
+$(document).on('click', '.navbar-toggle', function () {
   $toggle = $(this);
 
   if (nowuiDashboard.misc.navbar_menu_visible == 1) {
     $('html').removeClass('nav-open');
     nowuiDashboard.misc.navbar_menu_visible = 0;
-    setTimeout(function() {
+    setTimeout(function () {
       $toggle.removeClass('toggled');
       $('#bodyClick').remove();
     }, 550);
 
   } else {
-    setTimeout(function() {
+    setTimeout(function () {
       $toggle.addClass('toggled');
     }, 580);
 
     div = '<div id="bodyClick"></div>';
-    $(div).appendTo('body').click(function() {
+    $(div).appendTo('body').click(function () {
       $('html').removeClass('nav-open');
       nowuiDashboard.misc.navbar_menu_visible = 0;
-      setTimeout(function() {
+      setTimeout(function () {
         $toggle.removeClass('toggled');
         $('#bodyClick').remove();
       }, 550);
@@ -191,7 +208,7 @@ $(document).on('click', '.navbar-toggle', function() {
   }
 });
 
-$(window).resize(function() {
+$(window).resize(function () {
   // reset the seq for charts drawing animations
   seq = seq2 = 0;
 
@@ -217,7 +234,7 @@ nowuiDashboard = {
     navbar_menu_visible: 0
   },
 
-  checkScrollForTransparentNavbar: debounce(function() {
+  checkScrollForTransparentNavbar: debounce(function () {
     if ($(document).scrollTop() > scroll_distance) {
       if (transparent) {
         transparent = false;
@@ -233,7 +250,7 @@ nowuiDashboard = {
     }
   }, 17),
 
-  checkSidebarImage: function() {
+  checkSidebarImage: function () {
     $sidebar = $('.sidebar');
     image_src = $sidebar.data('image');
 
@@ -243,36 +260,36 @@ nowuiDashboard = {
     }
   },
 
-  initMinimizeSidebar: function() {
-    $('#minimizeSidebar').click(function() {
+  initMinimizeSidebar: function () {
+    $('#minimizeSidebar').click(function () {
       var $btn = $(this);
 
 
       if (sidebar_mini_active == true) {
         $('body').removeClass('sidebar-mini');
         sidebar_mini_active = false;
-        // nowuiDashboard.showSidebarMessage('Sidebar mini deactivated...');
+        nowuiDashboard.showSidebarMessage('Sidebar mini deactivated...');
       } else {
         $('body').addClass('sidebar-mini');
         sidebar_mini_active = true;
-        // nowuiDashboard.showSidebarMessage('Sidebar mini activated...');
+        nowuiDashboard.showSidebarMessage('Sidebar mini activated...');
       }
 
       // we simulate the window Resize so the charts will get updated in realtime.
-      var simulateWindowResize = setInterval(function() {
+      var simulateWindowResize = setInterval(function () {
         window.dispatchEvent(new Event('resize'));
       }, 180);
 
       // we stop the simulation of Window Resize after the animations are completed
-      setTimeout(function() {
+      setTimeout(function () {
         clearInterval(simulateWindowResize);
       }, 1000);
     });
   },
 
-  startAnimationForLineChart: function(chart) {
+  startAnimationForLineChart: function (chart) {
 
-    chart.on('draw', function(data) {
+    chart.on('draw', function (data) {
       if (data.type === 'line' || data.type === 'area') {
         data.element.animate({
           d: {
@@ -299,9 +316,9 @@ nowuiDashboard = {
 
     seq = 0;
   },
-  startAnimationForBarChart: function(chart) {
+  startAnimationForBarChart: function (chart) {
 
-    chart.on('draw', function(data) {
+    chart.on('draw', function (data) {
       if (data.type === 'bar') {
         seq2++;
         data.element.animate({
@@ -318,7 +335,7 @@ nowuiDashboard = {
 
     seq2 = 0;
   },
-  showSidebarMessage: function(message) {
+  showSidebarMessage: function (message) {
     try {
       $.notify({
         icon: "now-ui-icons ui-1_bell-53",

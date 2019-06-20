@@ -1,19 +1,22 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Inject } from '@angular/core';
-import PerfectScrollbar from 'perfect-scrollbar';
+import { Component, Inject, OnInit } from '@angular/core';
+import { WINDOW } from '@core/window.provider';
 
 @Component({
   selector: 'pl-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent implements AfterViewInit {
-  private mainPanelScrollbar: PerfectScrollbar;
+export class AppComponent implements OnInit {
+  private readonly html: HTMLElement;
+  private readonly body: HTMLElement;
 
-  @ViewChild('mainPanel', { static: false })
-  public mainPanelRef: ElementRef<HTMLElement>;
+  constructor(@Inject(WINDOW) private window: Window) {
+    const { document } = this.window;
+    this.html = document.documentElement;
+    this.body = document.body;
+  }
 
-  ngAfterViewInit() {
-    const { nativeElement } = this.mainPanelRef;
-    this.mainPanelScrollbar = new PerfectScrollbar(nativeElement, { wheelSpeed: 1 });
-    this.mainPanelScrollbar.update();
+  ngOnInit() {
+    this.html.classList.add('scrollbar-on');
+    this.body.classList.add('sidebar-mini');
   }
 }
