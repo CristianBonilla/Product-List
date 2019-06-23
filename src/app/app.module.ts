@@ -10,6 +10,7 @@ import { SidebarComponent } from '@view/sidebar/sidebar.component';
 import { SidebarWrapperComponent } from '@view/sidebar/wrapper/wrapper.component';
 
 import { WINDOW_PROVIDERS } from '@core/window.provider';
+import { EVENT_END_PROVIDER } from '@core/event-end';
 
 import { ScrollbarDirective } from '@shared/directives/scrollbar/scrollbar.directive';
 
@@ -32,7 +33,8 @@ import * as iconPack from '@core/fortawesome-icons';
     FontAwesomeModule
   ],
   providers: [
-    WINDOW_PROVIDERS
+    WINDOW_PROVIDERS,
+    EVENT_END_PROVIDER
   ],
   bootstrap: [
     AppComponent

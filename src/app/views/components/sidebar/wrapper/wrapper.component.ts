@@ -28,7 +28,7 @@ export class SidebarWrapperComponent implements OnInit {
     this.body.classList.add('sidebar-mini');
   }
 
-  updateScrollbar(element: HTMLElement, overlay: OverlayScrollbars) {
+  private updateScrollbar(element: HTMLElement, overlay: OverlayScrollbars) {
     const getAllCollapses = element.querySelectorAll('.collapse');
     const collapses = Array.from(getAllCollapses);
     collapses.forEach(c => {

@@ -9,8 +9,7 @@ export class AppComponent implements OnInit {
   private readonly html: HTMLElement;
   private readonly body: HTMLElement;
 
-  constructor(@Inject(WINDOW) private window: Window) {
-    const { document } = this.window;
+  constructor(@Inject(WINDOW) { document }: Window) {
     this.html = document.documentElement;
     this.body = document.body;
   }
