@@ -13,6 +13,7 @@ import { WINDOW_PROVIDERS } from '@core/window.provider';
 import { EVENT_END_PROVIDER } from '@core/event-end';
 
 import { ScrollbarDirective } from '@shared/directives/scrollbar/scrollbar.directive';
+import { WrapperDirective } from '@shared/directives/wrapper/wrapper.directive';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -24,7 +25,8 @@ import * as iconPack from '@core/fortawesome-icons';
     NavbarComponent,
     SidebarComponent,
     SidebarWrapperComponent,
-    ScrollbarDirective
+    ScrollbarDirective,
+    WrapperDirective
   ],
   imports: [
     BrowserModule,
