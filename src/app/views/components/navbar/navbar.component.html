@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-transparent  navbar-absolute bg-primary">
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute bg-primary" #navbar>
   <div class="container-fluid">
     <div class="navbar-wrapper">
-      <div class="navbar-toggle" #toggle>
+      <div class="navbar-toggle">
         <button type="button" class="navbar-toggler">
           <span class="navbar-toggler-bar bar1"></span>
           <span class="navbar-toggler-bar bar2"></span>
@@ -13,13 +13,14 @@
       </a>
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+    aria-expanded="false" aria-controls="navigation-index" aria-label="Toggle navigation"
+    (click)="expand()">
       <span class="navbar-toggler-bar navbar-kebab"></span>
       <span class="navbar-toggler-bar navbar-kebab"></span>
       <span class="navbar-toggler-bar navbar-kebab"></span>
     </button>
     <div id="navigation" class="collapse navbar-collapse justify-content-end">
-      <form>
+      <form (submit)="$event.preventDefault()">
         <div class="input-group no-border">
           <input type="text" class="form-control" placeholder="Buscar producto...">
           <div class="input-group-append">
@@ -47,7 +48,7 @@
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a id="navbarDropdownMenuLink" class="nav-link dropdown-toggle caret-none" href="#"
+          <a id="navbarDropdownMenuLink" class="nav-link dropdown-toggle caret-none" href="/"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <fa-icon [icon]="[ 'fas', 'caret-down' ]" size="2x"></fa-icon>
             <p>

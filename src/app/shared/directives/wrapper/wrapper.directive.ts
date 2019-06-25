@@ -5,15 +5,15 @@ import { SidebarComponent } from '@view/sidebar/sidebar.component';
 import { NavbarComponent } from '@view/navbar/navbar.component';
 
 @Directive({
-  selector: 'plWrapper.wrapper',
-  queries: {
-    navbar: new ContentChild(NavbarComponent, { static: false }),
-    sidebar: new ContentChild(SidebarComponent, { static: false })
-  }
+  selector: 'plWrapper.wrapper'
 })
 export class WrapperDirective implements AfterViewInit {
+  @ContentChild(NavbarComponent, { static: false })
   private readonly navbar: NavbarComponent;
+
+  @ContentChild(SidebarComponent, { static: false })
   private readonly sidebar: SidebarComponent;
+
   private readonly html: HTMLElement;
   private readonly body: HTMLElement;
   private readonly transitionEnd: TransitionEvent;
