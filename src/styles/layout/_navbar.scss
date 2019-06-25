@@ -31,7 +31,9 @@
     }
 
     .input-group-prepend .input-group-text i,
-    .input-group-append .input-group-text i {
+    .input-group-prepend .input-group-text fa-icon,
+    .input-group-append .input-group-text i,
+    .input-group-append .input-group-text fa-icon {
       color: $default-color;
       opacity: .5;
     }
@@ -48,7 +50,8 @@
     .input-group-append .input-group-text {
       color: $white-color;
 
-      i {
+      i,
+      fa-icon {
         opacity: 1;
       }
     }
@@ -144,12 +147,11 @@
       margin-right: 3px;
 
       i.fa+p,
-      i.now-ui-icons+p {
+      fa-icon + p {
         margin-left: 3px;
       }
 
-      i.fa,
-      i.now-ui-icons {
+      i.fa {
         font-size: 18px;
         position: relative;
         top: 3px;
@@ -157,9 +159,17 @@
         width: 21px;
       }
 
-      i.now-ui-icons {
-        top: 4px;
-        font-size: 16px;
+      fa-icon {
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        margin-right: 0.25rem;
+        width: 24px;
+      }
+
+      fa-icon + p {
+        font-size: 1.4em;
+        line-height: 1.5em;
       }
 
       &.profile-photo {
