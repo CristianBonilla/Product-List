@@ -1,10 +1,12 @@
 @include form-control-placeholder($default-color, 1);
 
 .form-control {
+  font-family: 'Arial';
   background-color: $transparent-bg;
   border: 1px solid $light-gray;
   border-radius: $btn-round-radius;
-  color: $black-color;
+  // color: $black-color;
+  color: #495057;
   line-height: normal;
   // font-size: $font-size-small;
   font-size: 0.9571em;
@@ -15,7 +17,8 @@
     border: 1px solid $primary-color;
     @include box-shadow(none);
     outline: 0 !important;
-    color: $black-color;
+    // color: $black-color;
+    color: #495057;
 
     &+.input-group-append .input-group-text,
     &~.input-group-append .input-group-text,
@@ -385,11 +388,16 @@ textarea.form-control {
 
 .form-horizontal {
 
+  .col-form-label {
+    font-size: 1.1571em;
+  }
+
   .col-form-label,
   .label-on-right {
     padding: 10px 5px 0 15px;
-    text-align: right;
-    max-width: 180px;
+    // text-align: right;
+    text-align: center;
+    // max-width: 180px;
   }
 
   .checkbox-radios {

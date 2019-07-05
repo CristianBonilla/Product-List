@@ -144,10 +144,11 @@
       padding: $padding-base-vertical $padding-base-horizontal;
       // line-height: $line-height-nav-link;
       line-height: 1;
+      margin-left: 3px;
       margin-right: 3px;
 
-      i.fa+p,
-      fa-icon + p {
+      i.fa+p
+      /*fa-icon + p*/ {
         margin-left: 3px;
       }
 
@@ -160,10 +161,11 @@
       }
 
       fa-icon {
-        display: inline-block;
+        // display: inline-block;
         position: relative;
         text-align: center;
-        margin-right: 0.25rem;
+        // margin-right: 0.25rem;
+        margin: 0 auto;
         width: 24px;
       }
 
@@ -285,5 +287,16 @@
 
   .nav-open .fixed-top [class*="container-"]{
     @include transform-translate-x(260px);
+  }
+
+  .navbar .navbar-nav {
+    .nav-link {
+      margin-left: auto;
+
+      fa-icon {
+        display: inline-block;
+        margin-right: 0.30rem;
+      }
+    }
   }
 }
